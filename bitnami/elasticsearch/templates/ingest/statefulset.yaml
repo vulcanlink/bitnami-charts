@@ -95,7 +95,7 @@ spec:
             - -ec
             - |
               {{- include "elasticsearch.sysctlIfLess" (dict "key" "vm.max_map_count" "value" "262144") | nindent 14 }}
-              {{- include "elasticsearch.sysctlIfLess" (dict "key" "fs.file-max" "value" "65536") | nindent 14 }}
+              ## {{- include "elasticsearch.sysctlIfLess" (dict "key" "fs.file-max" "value" "65536") | nindent 14 }}
           securityContext:
             privileged: true
             runAsUser: 0
